@@ -177,7 +177,7 @@ document.getElementById("year").textContent=new Date().getFullYear();
   let l="it",t="light";
   try{
     const s=localStorage.getItem("lang");
-    l=s?s:((navigator.language||"it").toLowerCase().startsWith("en")?"en":"it");
+    l=s?s:"it";
     t=localStorage.getItem("theme")||((window.matchMedia&&window.matchMedia("(prefers-color-scheme:dark)").matches)?"dark":"light");
   }catch(e){}
   document.documentElement.setAttribute("data-theme",t);

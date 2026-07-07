@@ -1040,7 +1040,7 @@ document.getElementById("year").textContent=new Date().getFullYear();
   let lang="it",theme="light";
   try{
     const s=localStorage.getItem("lang");
-    lang = s ? s : ((navigator.language||"it").toLowerCase().startsWith("en")?"en":"it");
+    lang = s ? s : "it";
     theme=localStorage.getItem("theme")|| ((window.matchMedia&&window.matchMedia("(prefers-color-scheme:dark)").matches)?"dark":"light");
   }catch(e){}
   setLang(lang);setTheme(theme);
