@@ -49,11 +49,7 @@ footer{border-top:1px solid var(--line);padding:2rem 0;font-size:.8rem;color:var
     <a class="brand" href="index.html">Sabrina Candi</a>
     <div class="tools">
       <a class="back" href="index.html" data-i18n="back">← Torna al sito</a>
-      <div class="lang" role="group" aria-label="Language">
-        <button id="lang-it" class="active">IT</button>
-        <button id="lang-en">EN</button>
-      </div>
-    </div>
+          </div>
   </div>
 </header>
 
@@ -106,83 +102,15 @@ footer{border-top:1px solid var(--line);padding:2rem 0;font-size:.8rem;color:var
     <div class="note">La presente informativa è redatta in buona fede sulla base delle caratteristiche tecniche del sito. Per esigenze specifiche si consiglia una verifica con un consulente privacy.</div>
   </div>
 
-  <!-- ============ ENGLISH ============ -->
-  <div id="txt-en" style="display:none">
-    <h1>Privacy &amp; Cookie Policy</h1>
-    <p class="updated">Notice pursuant to Articles 13 and 14 of Regulation (EU) 2016/679 (GDPR). Last updated: July 2026.</p>
-
-    <h2>1. Data controller</h2>
-    <p><strong>Avv. Sabrina Candi</strong>, with offices in Arezzo, Italy.<br>
-    VAT no. (P.IVA) 01567680515<br>
-    Email: <a href="mailto:avvocatocandi@gmail.com">avvocatocandi@gmail.com</a> · Tel: +39 338 3051242</p>
-
-    <h2>2. What data is processed</h2>
-    <h3>a) Data provided voluntarily</h3>
-    <p>This website contains no data collection forms. If you contact the office by email, phone or WhatsApp, the data you yourself provide (name, contact details, content of the communication) is processed solely to respond to your enquiry and, where applicable, to manage the professional relationship. Information shared is also protected by legal professional privilege.</p>
-    <h3>b) Browsing data</h3>
-    <p>The site is hosted on <strong>GitHub Pages</strong> (GitHub, Inc.). Like any hosting provider, GitHub may record technical logs (including IP addresses) for security and service operation. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub privacy statement</a>.</p>
-    <h3>c) Third-party services</h3>
-    <p>To display the page, the site loads technical resources from third-party servers, which receive your IP address when the request is made:</p>
-    <ul>
-      <li><strong>Google Fonts</strong> (Google LLC), for typefaces;</li>
-      <li><strong>cdnjs / Cloudflare</strong> (Cloudflare, Inc.), for a graphics library.</li>
-    </ul>
-    <p>The WhatsApp link on the Contact section opens the WhatsApp app or website (Meta Platforms) only if you voluntarily select it.</p>
-
-    <h2>3. Purposes and legal basis</h2>
-    <ul>
-      <li>Responding to contact requests: pre-contractual measures taken at the data subject's request (Art. 6.1.b GDPR) and legitimate interest in replying (Art. 6.1.f);</li>
-      <li>Technical logs and site security: legitimate interest (Art. 6.1.f);</li>
-      <li>Any professional engagement: performance of a contract and legal obligations (Art. 6.1.b and 6.1.c).</li>
-    </ul>
-
-    <h2>4. Data retention</h2>
-    <p>Communication data is kept for the time needed to handle the enquiry and, in the event of an engagement, for the duration of the professional relationship and the retention periods required by law and by the rules of the legal profession and tax regulations.</p>
-
-    <h2>5. Your rights</h2>
-    <p>Under Articles 15-22 GDPR you may at any time request access to your data, rectification, erasure, restriction of processing, objection and portability, by writing to <a href="mailto:avvocatocandi@gmail.com">avvocatocandi@gmail.com</a>. You may also lodge a complaint with the Italian Data Protection Authority (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">www.garanteprivacy.it</a>).</p>
-
-    <h2>6. Cookie Policy</h2>
-    <p><strong>This site uses no profiling cookies and no analytics or tracking tools.</strong></p>
-    <p>The site stores in your browser (localStorage) only two technical preferences: the chosen language (Italian/English) and the display theme (light/dark). These are technical values that remain on your device, contain no personal information and are not transmitted to the controller or to third parties. No consent is required for such strictly necessary technical storage.</p>
-    <p>You can delete them at any time by clearing your browser's site data.</p>
-
-    <h2>7. Changes</h2>
-    <p>This notice may be updated; the version published on this page is the one in force.</p>
-
-    <div class="note">This notice has been drafted in good faith on the basis of the site's technical characteristics. For specific needs, a review by a privacy professional is recommended.</div>
-  </div>
-
-</main>
+  </main>
 
 <footer>
   <div class="wrap">© <span id="year"></span> Avv. Sabrina Candi · P.IVA 01567680515</div>
 </footer>
 
 <script>
-const itBtn=document.getElementById("lang-it"),enBtn=document.getElementById("lang-en");
-function setLang(l){
-  document.documentElement.lang=l;
-  document.getElementById("txt-it").style.display=l==="it"?"":"none";
-  document.getElementById("txt-en").style.display=l==="en"?"":"none";
-  itBtn.classList.toggle("active",l==="it");enBtn.classList.toggle("active",l==="en");
-  document.querySelector("[data-i18n='back']").textContent=l==="it"?"← Torna al sito":"← Back to the site";
-  document.title=l==="it"?"Privacy e Cookie Policy | Avv. Sabrina Candi":"Privacy & Cookie Policy | Avv. Sabrina Candi";
-  try{localStorage.setItem("lang",l);}catch(e){}
-}
-itBtn.addEventListener("click",()=>setLang("it"));
-enBtn.addEventListener("click",()=>setLang("en"));
 document.getElementById("year").textContent=new Date().getFullYear();
-(function(){
-  let l="it",t="light";
-  try{
-    const s=localStorage.getItem("lang");
-    l=s?s:((navigator.language||"it").toLowerCase().startsWith("en")?"en":"it");
-    t=localStorage.getItem("theme")||((window.matchMedia&&window.matchMedia("(prefers-color-scheme:dark)").matches)?"dark":"light");
-  }catch(e){}
-  document.documentElement.setAttribute("data-theme",t);
-  setLang(l);
-})();
+(function(){let t="light";try{t=localStorage.getItem("theme")||((window.matchMedia&&window.matchMedia("(prefers-color-scheme:dark)").matches)?"dark":"light");}catch(e){}document.documentElement.setAttribute("data-theme",t);})();
 </script>
 </body>
 </html>
